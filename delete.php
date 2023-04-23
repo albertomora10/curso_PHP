@@ -5,7 +5,7 @@ require "database.php";
 
 $id = $_GET["id"];
 
-$statement = $conn->prepare("SELECT FROM contacts WHERE id = :id");
+$statement = $conn->prepare("SELECT * FROM contacts WHERE id = :id");
 $statement->execute([":id" => $id]);
 
 if ($statement -> rowCount() == 0) {
